@@ -4,17 +4,17 @@ using namespace  std;
 int main()
 {
 
-	int n,m;
+	int n,m;		//no of rows and columns
 	cin>>n>>m;
 
-	int addr=2000;
-	int size=2;
+	int addr=2000;		//base address 
+	int size=2;		//size assumed to be taken by an integer
 
 int arr[n][m];
 
 	for(int i=0;i<n;i++)
 	{
-		for(int j=0;j<m;j++)
+		for(int j=0;j<m;j++)	//array input in 2d matrix
 		cin>>arr[i][j];
 	}
 
@@ -28,11 +28,11 @@ cout<<endl;
 
 
 
-int num=(n*(n+1))/2;
+int num=(n*(n+1))/2;				//no of elements in upper triangular
 
-int row[num];
+int row[num];					// 1D array for row major
 
-int col[num];
+int col[num];					//1D array for col major
 
 int k=0;
 
@@ -40,9 +40,9 @@ for(int i=0;i<n;i++)
 {
 	for(int j=0;j<m;j++)
 	{
-		if(i<=j)
+		if(i<=j)			//condition for upper triangular
 		{
-			row[k++]=arr[i][j];
+			row[k++]=arr[i][j];	//storing the elemnts
 		}
 	}
 }
@@ -63,7 +63,7 @@ for(int j=0;j<m;j++)
 	
 int a,b;
 cout<<"Enter index :\n";
-cin>>a>>b;
+cin>>a>>b;							//index we want to locate
 
 int count=-1;
 
@@ -74,9 +74,9 @@ for(int i=0;i<n;i++)
 		if(i<=j)
 		{
 			
-			count++;
+			count++;			//calculating the index based on the condition
 
-			if(i==a && j==b)
+			if(i==a && j==b)		//breaking when i and j is equal to the index of the given element
 			goto here;
 		}
 	}
