@@ -28,7 +28,7 @@ cout<<endl;
 
 
 
-int num=n*m-(n*(n+1))/2;
+int num=(n*(n+1))/2;
 
 int upperTri[num];
 
